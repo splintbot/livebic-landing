@@ -1,0 +1,781 @@
+---
+layout: default
+title: Home
+---
+
+<div class="dark-wrapper">
+  <!-- Landing page Hero -->
+  <section class="hero is-fullheight is-black">
+    <div class="hero-head">
+      <!-- Cloned navbar -->
+      {{> navbar-clone}}
+
+      <!-- Static navbar -->
+      {{> navbar}}
+    </div>
+
+    <!-- Animated particles -->
+    <div x-data="initHero()" x-init="initParticles()" id="particles-js"></div>
+
+    <!-- Hero Image and Title -->
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-vcentered">
+          <!-- Landing page Title -->
+          <div class="column is-5 landing-caption">
+            <h1 class="title is-1 is-light is-semibold is-spaced main-title">
+              Africa First Music NFT Marketplace
+            </h1>
+            <h2 class="subtitle is-5 is-light is-thin">
+             Get the ealiest music NFTs from Africa Creators 
+            </h2>
+            <!-- CTA -->
+            <p class="buttons">
+              <a
+                href="#start"
+                class="button k-button k-primary raised has-gradient is-fat is-bold"
+              >
+                <span class="text">Launch App</span>
+                <span class="front-gradient"></span>
+              </a>
+              <a
+                href="roadmap.html"
+                class="button k-button k-primary raised has-gradient is-fat is-bold"
+              >
+                <span class="text">Roadmap</span>
+                <span class="front-gradient"></span>
+              </a>
+            </p>
+          </div>
+          <!-- Hero image -->
+          <div class="column is-7">
+            <figure class="image">
+              <img src="\img\logo\Africa on blockchain.png" alt="" />
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero footer -->
+    <div class="hero-foot">
+      <div class="container">
+        <div class="tabs is-centered">
+          <!-- Client / partner list -->
+          <ul>
+            <li>
+              <a
+                ><img
+                  class="hero-logo"
+                  src="\img\clients\EKO INNOVATION CENTRE.png"
+                  alt=""
+              /></a>
+            </li>
+            <li>
+              <a
+                ><img class="hero-logo" src="\img\clients\GDM GROUP.jpeg" alt=""
+              /></a>
+            </li>
+            <li>
+              <a
+                ><img class="hero-logo" src="\img\clients\GITEX LOGO.png" alt=""
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /Landing page Hero -->
+
+  
+      <!-- Content wrapper -->
+      <div class="content-wrapper is-medium">
+        <div class="columns is-vcentered">
+          <!-- Feature -->
+          <div class="column is-4">
+            <div class="feature">
+              <img
+                src="/img/icons/chained.svg"
+                alt=""
+                data-aos="fade-up"
+                data-aos-delay="100"
+                data-aos-offset="200"
+                data-aos-easing="ease-out-quart"
+              />
+              <h4 class="title is-6 is-tight is-light">NFT Minting</h4>
+              <p>
+            Mint multiple copies or unique singles of your content to Livebic Marketplace
+              </p>
+            </div>
+          </div>
+          <!-- Feature -->
+          <div class="column is-4">
+            <div class="feature">
+              <img
+                src="/img/icons/stacked.svg"
+                alt=""
+                data-aos="fade-up"
+                data-aos-delay="300"
+                data-aos-offset="200"
+                data-aos-easing="ease-out-quart"
+              />
+              <h4 class="title is-6 is-tight is-light">Tokenize your fans reward</h4>
+              <p>
+                By collecting your tokens your can stay connected and rewards your fan and your collectors
+              </p>
+            </div>
+          </div>
+          <!-- Feature -->
+          <div class="column is-4">
+            <div class="feature">
+              <img
+                src="/img/icons/compact.svg"
+                alt=""
+                data-aos="fade-up"
+                data-aos-delay="500"
+                data-aos-offset="200"
+                data-aos-easing="ease-out-quart"
+              />
+              <h4 class="title is-6 is-tight is-light">Ready for the Metaverse</h4>
+              <p>
+                Livebic supports tokens of multiple blockchains your content will be ready for Gaming, virtual words other metaverse realities.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Play video button -->
+        <div class="cta-wrapper has-text-centered">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/4lVsStzeG-s?controls=0" 
+          title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+          encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+           </div>
+      </div>
+      <!-- Content wrapper -->
+    </div>
+    <!-- /Container -->
+  </section>
+  <!-- /Icon Features section -->
+
+  <!-- ICO section -->
+  <section class="section is-medium is-end">
+    <!-- Container -->
+    <div class="container">
+      <!-- Divider -->
+      <div class="divider is-centered"></div>
+      <!-- Title & subtitle -->
+      <h2 class="title is-light is-semibold has-text-centered is-spaced">
+        ROADMAP
+      </h2>
+      <h4 class="subtitle is-6 is-light has-text-centered is-compact">
+        We are always launching exciting features for creators check out the roadmap.
+      </h4>
+
+      <!-- Content wrapper -->
+      <div class="content-wrapper is-large">
+        <!-- Flying tabs wrapper -->
+        <div x-data="initTabs()" class="flying-wrapper">
+          <!-- Tabs container -->
+          <div class="flying-tabs-container">
+            <!-- Tabs -->
+            <div class="flying-tabs">
+              <div
+                @click="switchTabs($event)"
+                class="flying-child tab-1"
+                data-tab="tab-1"
+                :class="{
+                                'is-active': activeTab === 'tab-1',
+                                '': activeTab != 'tab-1'
+                            }"
+              >
+                <a href="javascript:void(0);">Non Fungible Tokens</a>
+              </div>
+              <div
+                @click="switchTabs($event)"
+                class="flying-child tab-2"
+                data-tab="tab-2"
+                :class="{
+                                'is-active': activeTab === 'tab-2',
+                                '': activeTab != 'tab-2'
+                            }"
+              >
+                <a href="javascript:void(0);">Rewards Tokenizing</a>
+              </div>
+              <div
+                @click="switchTabs($event)"
+                class="flying-child tab-3"
+                data-tab="tab-3"
+                :class="{
+                                'is-active': activeTab === 'tab-3',
+                                '': activeTab != 'tab-3'
+                            }"
+              >
+               <!-- CODE RED CONTENT BLOCK NEED TO HIGHLIGHT IMPORTANT FEATURES AND UPCOMING FEATURES FFOR CREATORS  -->
+                <a href="javascript:void(0);">Ready for  Meterverse</a>
+              </div>
+              <div class="slider"></div>
+            </div>
+          </div>
+
+          <!-- Tabs content wrapper -->
+          <div class="flying-tabs-content">
+            
+            <!-- Tab 1 -->
+            <div
+              class="tab-content"
+              :class="{
+                                'is-active': activeTab === 'tab-1',
+                                '': activeTab != 'tab-1'
+                            }"
+            >
+              <div class="columns is-vcentered tab-content-wrapper">
+                <!-- Tab content -->
+                <div class="column is-5 is-offset-1">
+                  <div class="text-content">
+                    <h4
+                      class="title is-6 is-light animated preFadeInUp fadeInUp"
+                    >
+                      KICKSTART YOUR CONTENT ON LIVEBIC
+                    </h4>
+                    <ul class="custom-bullet-list">
+                      <li class="animated preFadeInUp fadeInUp">
+                        <span>Receive crypto from fans and supporters</span>
+                        <br />
+                        <span class="item-content">1 200 000 KP (22%)</span>
+                      </li>
+                      <li class="animated preFadeInUp fadeInUp">
+                        <span>Token Exchange</span>
+                        <br />
+                        <span class="item-content"
+                          >1 BTC = 2200 KP, 1 ETH = 825 KP</span
+                        >
+                      </li>
+                      <li class="animated preFadeInUp fadeInUp">
+                        <span>Transations</span>
+                        <br />
+                        <span class="item-content"
+                          >Minimal transaction amount is 1 BTC, 1 ETH, 1
+                          LTC</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- Tab image -->
+                <div class="column is-5">
+                  <img
+                    class="animated preFadeInUp fadeInUp"
+                    src="/img/illustrations/tokens.svg"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- /Tab 1 -->
+
+            <!-- Tab 2 -->
+            <div
+              class="tab-content"
+              :class="{
+                                'is-active': activeTab === 'tab-2',
+                                '': activeTab != 'tab-2'
+                            }"
+            >
+              <div class="columns is-vcentered tab-content-wrapper">
+                <!-- Tab content -->
+                <div class="column is-5 is-offset-1">
+                  <div class="text-content">
+                    <h4
+                      class="title is-6 is-light animated preFadeInUp fadeInUp"
+                    >
+                      How Livebic NFTs
+                    </h4>
+                    <ul class="custom-bullet-list">
+                      <li class="animated preFadeInUp fadeInUp">
+                        <span>Tokens Sales</span>
+                        <br />
+                        <span class="item-content">1 200 000 KP (22%)</span>
+                      </li>
+                      <li class="animated preFadeInUp fadeInUp">
+                        <span>Token Exchange</span>
+                        <br />
+                        <span class="item-content"
+                          >1 BTC = 2200 KP, 1 ETH = 825 KP</span
+                        >
+                      </li>
+                      <li class="animated preFadeInUp fadeInUp">
+                        <span>Transations</span>
+                        <br />
+                        <span class="item-content"
+                          >Minimal transaction amount is 1 BTC, 1 ETH, 1
+                          LTC</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- Tab image -->
+                <div class="column is-5">
+                  <img
+                    class="animated preFadeInUp fadeInUp"
+                    src="/img/illustrations/charts.svg"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- /Tab 2 -->
+
+            <!-- Tab 3 -->
+            <div
+              class="tab-content"
+              :class="{
+                                'is-active': activeTab === 'tab-3',
+                                '': activeTab != 'tab-3'
+                            }"
+            >
+              <div class="columns is-vcentered tab-content-wrapper">
+                <!-- Tab content -->
+                <div class="column is-5 is-offset-1">
+                  <div class="text-content">
+                    <h4
+                      class="title is-6 is-light animated preFadeInUp fadeInUp"
+                    >
+                      REWARDS & BOUNTIES
+                    </h4>
+                    <ul class="custom-bullet-list">
+                      <li class="animated preFadeInUp fadeInUp">
+                        <span>Tokens Sales</span>
+                        <br />
+                        <span class="item-content">1 200 000 KP (22%)</span>
+                      </li>
+                      <li class="animated preFadeInUp fadeInUp">
+                        <span>Token Exchange</span>
+                        <br />
+                        <span class="item-content"
+                          >1 BTC = 2200 KP, 1 ETH = 825 KP</span
+                        >
+                      </li>
+                      <li class="animated preFadeInUp fadeInUp">
+                        <span>Transations</span>
+                        <br />
+                        <span class="item-content"
+                          >Minimal transaction amount is 1 BTC, 1 ETH, 1
+                          LTC</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- Tab image -->
+                <div class="column is-5">
+                  <img
+                    class="animated preFadeInUp fadeInUp"
+                    src="/img/illustrations/bounty.svg"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- /Tab 3 -->
+          </div>
+        </div>
+      </div>
+      <!-- Content wrapper -->
+    </div>
+    <!-- /Container -->
+  </section>
+  <!-- /ICO section -->
+
+
+  <!-- Company section -->
+  <section class="section is-medium has-big-dark-gradient">
+    <!-- Container -->
+    <div class="container">
+      <!-- Divider -->
+      <div class="divider is-centered"></div>
+      <!-- Title & subtitle -->
+      <h2 class="title is-light is-semibold has-text-centered is-spaced">
+        Our Team
+      </h2>
+      <h4 class="subtitle is-6 is-light has-text-centered is-compact">
+       Our Vision is to unleash Africa content with blockchain powered software infrastructure. Meet the TEAM 
+      </h4>
+
+      <!-- Content wrapper -->
+      <div class="content-wrapper is-large">
+        <div class="columns is-vcentered">
+          <div class="column is-hidden-mobile"></div>
+
+          <!-- Team member -->
+          <div class="column is-3">
+            <div class="team-member-container">
+              <div class="dark-card">
+                <div class="avatar">
+                  <svg
+                    class="circle-chart"
+                    viewbox="0 0 33.83098862 33.83098862"
+                    width="140"
+                    height="140"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      class="circle-chart-background"
+                      stroke-width="1"
+                      fill="none"
+                      cx="16.91549431"
+                      cy="16.91549431"
+                      r="15.91549431"
+                    />
+                    <circle
+                      class="circle-chart-circle"
+                      stroke-width="1"
+                      stroke-dasharray="33,100"
+                      stroke-linecap="round"
+                      fill="none"
+                      cx="16.91549431"
+                      cy="16.91549431"
+                      r="15.91549431"
+                    />
+                  </svg>
+                  <img class="is-sketch" src="/img/team/mike.svg" alt="" />
+                  <img class="is-real" src="img\team\shady.jpeg" alt="" />
+                </div>
+                <div class="member-info">
+                  <h4 class="title is-light is-6 is-tight">Shadrach Akao</h4>
+                  <div class="position">CO-Founder / CEO</div>
+                  <p class="description">
+                    Shadrach is Product Growth Hacker at Livebic.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team member -->
+          <div class="column is-3">
+            <div class="team-member-container">
+              <div class="dark-card">
+                <div class="avatar">
+                  <svg
+                    class="circle-chart"
+                    viewbox="0 0 33.83098862 33.83098862"
+                    width="140"
+                    height="140"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      class="circle-chart-background"
+                      stroke-width="1"
+                      fill="none"
+                      cx="16.91549431"
+                      cy="16.91549431"
+                      r="15.91549431"
+                    />
+                    <circle
+                      class="circle-chart-circle"
+                      stroke-width="1"
+                      stroke-dasharray="33,100"
+                      stroke-linecap="round"
+                      fill="none"
+                      cx="16.91549431"
+                      cy="16.91549431"
+                      r="15.91549431"
+                    />
+                  </svg>
+                  <img class="is-sketch" src="/img/team/mike.svg" alt="" />
+                  <img class="is-real" src="/img/team/ja.jpeg" alt="" />
+                </div>
+                <div class="member-info">
+                  <h4 class="title is-light is-6 is-tight">Jahswill Ovhide</h4>
+                  <div class="position">CTO</div>
+                  <p class="description">
+                    Jahswill is Master of CODE a blockchain fullstack developer.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team member -->
+          <div class="column is-3">
+            <div class="team-member-container">
+              <div class="dark-card">
+                <div class="avatar">
+                  <svg
+                    class="circle-chart"
+                    viewbox="0 0 33.83098862 33.83098862"
+                    width="140"
+                    height="140"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      class="circle-chart-background"
+                      stroke-width="1"
+                      fill="none"
+                      cx="16.91549431"
+                      cy="16.91549431"
+                      r="15.91549431"
+                    />
+                    <circle
+                      class="circle-chart-circle"
+                      stroke-width="1"
+                      stroke-dasharray="33,100"
+                      stroke-linecap="round"
+                      fill="none"
+                      cx="16.91549431"
+                      cy="16.91549431"
+                      r="15.91549431"
+                    />
+                  </svg>
+                  <img class="is-sketch" src="/img/team/mike.svg" alt="" />
+                  <img class="is-real" src="/img/team/ernest.jpeg" alt="" />
+                </div>
+                <div class="member-info">
+                  <h4 class="title is-light is-6 is-tight">Ernest Ogbanefe</h4>
+                  <div class="position">Co-Founder / CCO</div>
+                  <p class="description">
+                    Ernest is the User Experience and Creative WIZARD at Livebic.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-hidden-mobile"></div>
+        </div>
+
+
+        <!-- Spaced divider -->
+        <p id="media"></p>
+        <div class="divider is-centered is-spacer"></div>
+        <!-- Title & subtitle -->
+               <h2 class="title is-light is-semibold has-text-centered is-spaced">
+          Media & News
+        </h2>
+        <h4 class="subtitle is-6 is-light has-text-centered is-compact">
+          We are active in the Africa Ecosytem discover more about Livebic.
+        </h4>
+
+        <!-- Content wrapper -->
+        <div class="content-wrapper is-large">
+          <div class="columns">
+            <!-- Media section -->
+            <div class="column is-10 is-offset-1">
+              <!-- Post -->
+              <div class="blog-post">
+                <a href="https://techpoint.africa/2022/05/25/markhack-1-0-livebic-clinches-first-prize-as-eko-innovation-centre-and-gdm-group-call-for-technological-innovation-to-disrupt-marketing-landscape">
+                  <!-- Featured image -->
+                  <div class="featured-image">
+                    <img src="\img\media\Livebic techpoint.jpg" alt="" />
+                  </div>
+                  <!-- Content -->
+                  <div class="content">
+                    <div class="post-title">
+                      MarkHack 1.0: LiveBIc Clinches First Prize, as Eko Innovation Centre and GDM Group call for Technological Innovation to Disrupt Marketing Landscape
+                      <span class="blog-date">May 25, 2022</span>
+                    </div>
+                    <p>
+                      In what has proven to be game changing and a first-of-its-kind in the Nigerian media and marketing space, winning innovations have emerged at the grand finale of the maiden edition of Nigeria’s first marketing and media Hackathon tagged ‘MarkHack 1.0’ organized by the Eko Innovation Centre in collaboration with GDM Group....
+                    </p>
+                    <!-- Meta -->
+                    <div class="post-meta">
+                      <div class="author-block">
+                        <div class="image is-32x32">
+                          <img src="\img\clients\techpoint logo.png" alt="" />
+                        </div>
+                        <div class="author-name">by Techpoint Africa</div>
+                      </div>
+                      <div class="stats-block">
+                        <div class="comments">
+                          <i data-feather="message-circle"></i>
+                          <span>3</span>
+                        </div>
+                        <div class="likes">
+                          <i data-feather="heart"></i>
+                          <span>9</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Post -->
+              <div class="blog-post">
+                <a href="https://brandcom.ng/2022/05/markhack-1-0-livebic-clinches-first-prize-as-marketers-call-for-technological-innovation-to-disrupt-marketing-landscape/">
+                  <!-- Featured image -->
+                  <div class="featured-image">
+                    <img src="\img\media\Livebic Brand.jpg" alt="" />
+                  </div>
+                  <!-- Content -->
+                  <div class="content">
+                    <div class="post-title">
+                      LIVEBIC WINS STAR PRIZE, ORGANISERS CRAVE IDEAS TO DISRUPT MARKETING LANDSCAPE
+                      <span class="blog-date">MAY 21, 2022</span>
+                    </div>
+                    <p>
+                      LiveBic, which comprised Shadrach Akao and Ernest Ogbanefe emerged the overall winners from a list of 10 finalists involved in the pitch at the finals of the hackathon. LiveBic won the star prize of $10,000 for developing a new platform for content creators to market and deliver their content....
+                    </p>
+                    <!-- Meta -->
+                    <div class="post-meta">
+                      <div class="author-block">
+                        <div class="image is-32x32">
+                          <img src="\img\media\azeez.jpg" alt="" />
+                        </div>
+                        <div class="author-name">by Azeez Disu</div>
+                      </div>
+                      <div class="stats-block">
+                        <div class="comments">
+                          <i data-feather="message-circle"></i>
+                          <span>7</span>
+                        </div>
+                        <div class="likes">
+                          <i data-feather="heart"></i>
+                          <span>29</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Post -->
+              <div class="blog-post">
+                <a href="https://nairametrics.com/2022/05/25/lagos-commissioner-says-innovators-will-shape-the-future-of-nigerias-economy/">
+                  <!-- Featured image -->
+                  <div class="featured-image">
+                    <img src="\img\media\MARKHACK-1.0-PHOTO.jpg" alt="" />
+                  </div>
+                  <!-- Content -->
+                  <div class="content">
+                    <!--div class="rounded"></div-->
+                    <div class="post-title">
+                      Lagos commissioner says innovators will shape the future of Nigeria’s economy
+                      <span class="blog-date">May 25, 2022</span>
+                    </div>
+                    <p>
+                      A tech startup LiveBIc, emerged as the overall winner from a list of 10 finalists involved in the pitch at the finals of the hackathon. 
+                      LiveBIc won the star prize of $10,000 for developing a new platform for content creators to market and deliver their content....
+                    </p>
+                    <!-- Meta -->
+                    <div class="post-meta">
+                      <div class="author-block">
+                        <div class="image is-32x32">
+                          <img src="\img\media\nairametrics.png" alt="" />
+                        </div>
+                        <div class="author-name">by  Samson Akintaro</div>
+                      </div>
+                      <div class="stats-block">
+                        <div class="comments">
+                          <i data-feather="message-circle"></i>
+                          <span>31</span>
+                        </div>
+                        <div class="likes">
+                          <i data-feather="heart"></i>
+                          <span>48</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!-- /Media section -->
+          </div>
+
+          <!-- CTA -->
+          <div class="cta-wrapper has-text-centered">
+            <a
+              href="http://www.app.livebic.com/"
+              class="button k-button k-primary raised has-gradient is-fat is-bold"
+            >
+              <span class="text">Launch App</span>
+              <span class="front-gradient"></span>
+            </a>
+          </div>
+
+          <!-- Partner logos -->
+          <div class="partners">
+            <!-- Partner -->
+            <div class="partner-item">
+              <img src="\img\clients\EKO INNOVATION CENTRE.png" alt="" />
+            </div>
+            <!-- Partner -->
+            <div class="partner-item">
+              <img src="\img\clients\GDM GROUP.jpeg" alt="" />
+            </div>
+            <!-- Partner -->
+            <div class="partner-item">
+              <img src="\img\clients\GITEX LOGO.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <!-- /Content wrapper -->
+      </div>
+      <!-- /Content wrapper -->
+    </div>
+  </section>
+  <!-- /Company section -->
+
+  <!-- Contact section -->
+  <section class="section is-medium is-darkest">
+    <!-- Container -->
+    <div class="container">
+      <!-- Divider -->
+      <div class="divider is-centered"></div>
+      <!-- Title & subtitle -->
+      <h2 class="title is-light is-semibold has-text-centered is-spaced">
+        Get in Touch
+      </h2>
+      <h4 class="subtitle is-6 is-light has-text-centered is-compact">
+        Connect with us on social media.
+      </h4>
+
+      <!-- Content wrapper -->
+      <div class="content-wrapper is-large">
+        <div class="columns">
+          <div class="column is-8 is-offset-2">
+            <!-- Contact icons -->
+            <div class="contact-icons">
+              <!-- Phone -->
+              <a
+                class="contact-icon"
+                data-aos="fade-up"
+                data-aos-delay="100"
+                data-aos-offset="200"
+                data-aos-easing="ease-out-quart"
+              >
+                <img class="is-phone" src="/img/icons/phone.svg" alt="" />
+              </a>
+              <!-- Mail -->
+              <a
+                class="contact-icon"
+                data-aos="fade-up"
+                data-aos-delay="300"
+                data-aos-offset="200"
+                data-aos-easing="ease-out-quart"
+              >
+                <img class="is-phone" src="/img/icons/mail.svg" alt="" />
+              </a>
+              <!-- Telegram -->
+              <a
+                class="contact-icon"
+                data-aos="fade-up"
+                data-aos-delay="500"
+                data-aos-offset="200"
+                data-aos-easing="ease-out-quart"
+              >
+                <img class="is-telegram" src="/img/logo/telegram.svg" alt="" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+      <!-- Content wrapper -->
+    </div>
+    <!-- Container -->
+  </section>
+  <!-- Contact section -->
+</div>
